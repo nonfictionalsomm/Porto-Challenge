@@ -276,7 +276,7 @@
                 questions: [
                     { q: "What is the name of the governing body that regulates the production and trade of all Port wine?", a: "Instituto dos Vinhos do Douro e Porto (IVDP)", o: ["Casa do Douro", "Comissão Vitivinícola Regional", "The British Factory House"] },
                     { q: "What is the 'benefício'?", a: "The annual authorization of the quantity of grapes that can be made into Port.", o: ["A tax paid by Port shippers.", "The classification of a vintage.", "A subsidy for organic farming."] },
-                    { q:_:"The fortification of Port must be done with a neutral grape spirit (aguardente) of what minimum strength?", a: "77% ABV", o: ["96% ABV", "50% ABV", "60% ABV"] },
+                    { q: "The fortification of Port must be done with a neutral grape spirit (aguardente) of what minimum strength?", a: "77% ABV", o: ["96% ABV", "50% ABV", "60% ABV"] },
                     { q: "What is the 'cadastro'?", a: "The official registry and classification of all vineyards in the Douro.", o: ["The legal document declaring a vintage.", "The permit to export Port.", "A list of authorized grape varieties."] },
                     { q: "Which of the following is NOT a legal category of Ruby Port?", a: "Aged Ruby", o: ["Ruby", "Ruby Reserva", "Late Bottled Vintage (LBV)"] },
                     { q: "A Tawny Port with an indication of age (10, 20, 30, 40, 50) must state what on the label?", a: "The year of bottling", o: ["The specific vintages in the blend", "The average age of the blend", "The date of fortification"] },
@@ -645,14 +645,14 @@
                 { q: "What is the legal maximum amount of volatile acidity allowed in Port?", a: "It varies by style, but is generally higher than for table wines." },
                 { q: "What is the minimum time a Crusted Port must spend in bottle before release?", a: "Three years." },
                 { q: "What is Rosé Port?", a: "A style made with red grapes but with limited skin contact to achieve a pink color, served chilled." },
-                { q:_:"What is a 'Vinho ao Roda'?", a: "A historical term for wine that matured on a round-trip sea journey through the tropics." },
+                { q: "What is a 'Vinho ao Roda'?", a: "A historical term for wine that matured on a round-trip sea journey through the tropics." },
                 { q: "The grape spirit used for fortification is legally required to be what?", a: "Neutral and free of congeners or flavors." },
                 { q: "What is the name of the special tongs used to open a very old bottle of Vintage Port by cracking the neck of the bottle with thermal shock?", a: "Port tongs." },
                 { q: "Who regulates the unfortified DOC Douro table wines?", a: "The IVDP, the same body that regulates Port." }
             ],
             gastronome: [
                 { q: "What is the most famous and classic pairing for Vintage Port?", a: "A strong, salty blue cheese, especially Stilton." },
-                { q:-:"What is a 'Porto Tónico'?", a: "A popular aperitif cocktail made with White Port, tonic water, and a citrus garnish." },
+                { q: "What is a 'Porto Tónico'?", a: "A popular aperitif cocktail made with White Port, tonic water, and a citrus garnish." },
                 { q: "Aged Tawny Ports, with their nutty, caramel, and dried fruit notes, pair beautifully with what kind of desserts?", a: "Nut tarts, crème brûlée, apple pie, or simply a bowl of walnuts." },
                 { q: "What is 'Tripas à Moda do Porto'?", a: "The signature dish of Porto, a hearty stew of tripe, white beans, sausage, and vegetables." },
                 { q: "The Port lodges, where the wine is aged, are located in which city?", a: "Vila Nova de Gaia, across the river from Porto." },
@@ -683,7 +683,6 @@
                 { q: "What is a 'confraria'?", a: "A brotherhood or guild, like the Confraria do Vinho do Porto, that promotes and protects the traditions of a product." },
                 { q: "Which style of Port is most often used in cooking?", a: "Basic Ruby Port." },
                 { q: "What is a 'Bacalhau à Brás'?", a: "A popular dish made with shredded salt cod, onions, potatoes, and scrambled eggs." },
-        
                 { q: "What are 'tremoços'?", a: "Lupini beans, a popular salty snack often served with beer or aperitifs in Portugal." },
                 { q: "Which city is the gastronomic capital of Portugal?", a: "Porto." },
                 { q: "The 'Factory House' in Porto was the exclusive club for which group?", a: "The British Port shippers." },
@@ -980,7 +979,7 @@
                     buttonText = isCorrect ? `➡️ Explain the Pairing` : `💡 Learn about this Pairing`;
                     break;
                 default:
-                     buttonText = isCorrect ? `➡️ Dive Deeper on ${question.subjectName}` : `💡 Learn More about ${question.subjectName}`;
+                        buttonText = isCorrect ? `➡️ Dive Deeper on ${question.subjectName}` : `💡 Learn More about ${question.subjectName}`;
             }
 
             return `<button onclick="handleAiRequest('${question.subjectType}', '${question.subjectName.replace(/'/g, "\\'")}')" class="mt-4 bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded text-sm">${buttonText}</button>`;
@@ -1013,7 +1012,7 @@
                 feedbackHtml = `<div class="p-4 rounded-lg bg-red-900 border border-red-700">
                                     <p class="font-bold text-red-300">Incorrect.</p>
                                     <p class="text-red-400">The correct answer was: ${q.a}</p>
-                                     ${generateAiButtonHtml(q, false)}
+                                        ${generateAiButtonHtml(q, false)}
                                 </div>`;
             }
 
@@ -1390,7 +1389,7 @@
                         </div>`;
                     showModal(aiContent);
                 } else {
-                     throw new Error("Invalid response structure from API.");
+                        throw new Error("Invalid response structure from API.");
                 }
 
             } catch (error) {
@@ -1414,6 +1413,24 @@
             }
             return array;
         }
+
+        // --- FIX: Make functions for inline event handlers global ---
+        window.closeWelcomeModal = closeWelcomeModal;
+        window.startGame = startGame;
+        window.returnToMenu = returnToMenu;
+        window.checkAnswer = checkAnswer;
+        window.saveApiKey = saveApiKey;
+        window.hideModal = hideModal;
+        window.nextQuestion = nextQuestion;
+        window.handleAiRequest = handleAiRequest;
+        window.resetAndStartGame = resetAndStartGame;
+        window.checkTimeline = checkTimeline;
+        window.removeFromTimeline = removeFromTimeline;
+        window.nextHistorianQuestion = nextHistorianQuestion;
+        window.showFlashcardTopicSelection = showFlashcardTopicSelection;
+        window.startFlashcardSession = startFlashcardSession;
+        window.closeGlobalMasteryModal = closeGlobalMasteryModal;
+
 
         // --- Initial Load ---
         window.onload = showWelcomeModal;
