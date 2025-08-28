@@ -114,15 +114,19 @@
 
 
 
+    <!-- Game Screen -->
     <div id="game-screen" class="hidden min-h-screen flex flex-col items-center justify-center p-4">
-        </div>
+        <!-- Content will be injected here -->
+    </div>
 
 
 
 
+    <!-- Modals -->
     <div id="modal-container" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
         <div id="modal-content-wrapper" class="bg-gray-800 rounded-lg shadow-xl w-full max-w-2xl modal-content overflow-y-auto">
-            </div>
+            <!-- Modal content will be injected here -->
+        </div>
     </div>
 
 
@@ -308,7 +312,7 @@
                     { q: "What is the typical alcohol strength of the 'aguardente' used for fortification?", a: "77% ABV", o: ["40% ABV", "55% ABV", "96% ABV"] },
                     { q: "Which Port style must be held in bottle for a minimum of 3 years before release and is a blend of vintages?", a: "Crusted Port", o: ["Late Bottled Vintage", "Colheita", "Vintage Port"] },
                     { q: "The term 'Vinho Regional Duriense' is equivalent to which European wine classification?", a: "PGI (Protected Geographical Indication)", o: ["PDO (Protected Designation of Origin)", "DOCG", "Qualitätswein"] },
-                    { q: "What is the highest tier of Portuguese wine classification?", a: "DOC (Denominação de Origem Controlada)", o: ["Vinho Regional (VR)", "IPR", "Vinho"] },
+                    { q: "What is the highest tier of the Portuguese wine classification system?", a: "DOC (Denominação de Origem Controlada)", o: ["Vinho Regional (VR)", "IPR", "Vinho"] },
                     { q: "In the vineyard classification system, which factor is rewarded with the most potential points?", a: "Location", o: ["Grape Varieties", "Vine Age", "Slope"] },
                     { q: "Which factor in the vineyard classification system can result in the largest point deduction?", a: "Altitude", o: ["Yield", "Bedrock", "Variety"] },
                     { q: "A Vintage Port must be bottled between July 1 of the 2nd year and what date?", a: "June 30 of the 3rd year", o: ["December 31 of the 2nd year", "December 31 of the 6th year", "May 1 of the 2nd year"] },
@@ -329,7 +333,7 @@
                     { q: "A 'Single Quinta Vintage' Port is a wine from a single estate from a single vintage, typically produced in years that are:", a: "Good, but not generally 'declared' as classic.", o: ["The very best, classic years.", "The poorest quality years.", "Blended across multiple years."] },
                     { q: "Which of these is a key legal difference between an LBV and a Vintage Port?", a: "LBV is aged in wood much longer (4-6 years vs ~2).", o: ["Vintage Port is a blend of years, LBV is not.", "LBV must be from A-rated vineyards only.", "Vintage Port is filtered, LBV is not."] },
                     { q: "What is the IPR (Indicação de Proveniência Regulamentada) category?", a: "A now largely obsolete transitional category for regions seeking DOC status.", o: ["A higher level than DOC.", "The category for all fortified wines.", "A category for experimental wines."] },
-                    { q: "What is the purpose of the 'benefício' system?", a: "To control volume, maintain price stability, and prioritize quality.", o: ["To encourage higher yields.", "To tax growers based on vineyard size.", "To promote specific grape varieties."] },
+                    { q: "What is the purpose of the 'benefício'?", a: "To control volume, maintain price stability, and prioritize quality.", o: ["To encourage higher yields.", "To tax growers based on vineyard size.", "To promote specific grape varieties."] },
                     { q: "The law requires that grapes for sparkling wine production are usually sourced from where?", a: "Higher-altitude vineyards", o: ["The Douro Superior", "Vineyards close to the river", "The oldest vineyards"] },
                     { q: "What does a lower letter grade (e.g., F) mean for a vineyard's 'benefício'?", a: "It receives the smallest allocation.", o: ["It receives the largest allocation.", "It is not allowed to grow grapes.", "It must only produce Douro DOC wine."] },
                     { q: "The practice of acidification with tartaric acid in Port winemaking is:", a: "Not common, as structure relies more on tannin, sugar, and alcohol.", o: ["Mandatory for all red Ports.", "Illegal, like chaptalization.", "Common for White Ports only."] },
@@ -641,7 +645,7 @@
                 { q: "Which factor in the vineyard rating system can give the largest point deduction?", a: "Altitude" },
                 { q: "When can a Vintage Port be released for sale?", a: "After May 1 of the 2nd year following the harvest." },
                 { q: "What is the minimum ABV for a Light Dry White Port?", a: "16.5%" },
-                { q: "What is a 'lagar'?", a: "A traditional wide, shallow granite trough used for foot treading." },
+                { q: "What is the name of the shallow, open-topped granite tanks used for traditional foot treading?", a: "Lagares" },
                 { q: "What is the 'Selo de Garantia'?", a: "The official IVDP guarantee seal affixed to the neck of every certified bottle." },
                 { q: "Which Port style indicates an average age on the label (e.g., 10, 20, 30, 40)?", a: "Aged Tawny" },
                 { q: "What was the previous name for the most basic wine classification, 'Vinho'?", a: "Vinho de Mesa (Table Wine)" },
@@ -674,143 +678,369 @@
             ],
             gastronome: [
                 { q: "Porto's residents are nicknamed 'Tripeiros' after which iconic local dish?", a: "Tripas à Moda do Porto" },
-                { q:_blank
-                    <p class="text-sm text-yellow-400 mb-4">Security Reminder: Treat your API key like a password. It is saved in your browser's local storage for convenience but is not transmitted anywhere else.</p>
-                    <div class="mb-4">
-                        <label for="api-key-input" class="block text-sm font-medium text-gray-300 mb-1">Google AI API Key</label>
-                        <input type="password" id="api-key-input" class="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white" value="${userApiKey}">
-                    </div>
-                    <button onclick="saveApiKey()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Save and Close</button>
-                </div>
-            `;
-            showModal(content);
-        }
-     	
-        function saveApiKey() {
-            userApiKey = document.getElementById('api-key-input').value;
-            localStorage.setItem('geminiApiKey', userApiKey);
-            hideModal();
-        }
+                { q: "What is a 'Francesinha'?", a: "A formidable sandwich with steak, ham, and sausage, covered in cheese and a spicy sauce." },
+                { q: "What is the world-famous classic pairing for a mature Vintage Port?", a: "Stilton Cheese" },
+                { q: "The nutty, caramel notes of an Aged Tawny Port pair beautifully with what type of desserts?", a: "Desserts with almonds, caramel, or dried fruits" },
+                { q: "What is 'Bacalhau'?", a: "Salted cod" },
+                { q: "What is the classic aperitif in Porto, made with dry White Port and tonic?", a: "Porto Tónico" },
+                { q: "Which PDO-protected sheep's milk cheese is a sublime pairing for Port?", a: "Queijo Serra da Estrela" },
+                { q: "The vibrant, dark fruit of an LBV Port is an excellent match for what?", a: "Rich dark chocolate desserts" },
+                { q: "What is 'Aguardente Vínica'?", a: "High-quality, aged grape brandy from the Douro" },
+                { q: "Which liqueur is made by infusing sour cherries ('ginja') in aguardente?", a: "Ginjinha" },
+                { q: "What is 'Cabrito Assado com Arroz de Forno'?", a: "Roasted kid goat with oven-baked rice" },
+                { q: "What is 'Posta Mirandesa'?", a: "A thick, bone-in steak from the Mirandesa breed of cattle." },
+                { q: "Which PDO-protected product is a key flavor base for many Douro dishes?", a: "Azeite de Trás-os-Montes (Olive Oil)" },
+                { q: "What is 'Aguardente Bagaceira'?", a: "A rustic pomace brandy distilled from grape skins and seeds." },
+                { q: "Licor Beirão is a popular herbal liqueur with a secret recipe of how many botanicals?", a: "12" },
+                { q: "Which PDO-protected meat comes from the native Bísaro pig?", a: "Carne de Bísaro Transmontano" },
+                { q: "What is the origin story of 'Tripas à Moda do Porto'?", a: "Citizens gave the best meat to ships, leaving only offal for themselves." },
+                { q: "A chilled dry White Port is typically accompanied by what snacks?", a: "Salted almonds and olives" },
+                { q: "The Mateus Palace became famous from its depiction on the label of what wine?", a: "Mateus Rosé" },
+                { q: "What does 'Posta' refer to in 'Posta Mirandesa'?", a: "A thick steak or chop" },
+                { q: "Aguardente Vínica do Douro is matured in what?", a: "Oak casks" },
+                { q: "Which dish is a famous Porto casserole of salt cod, potatoes, and onions?", a: "Bacalhau à Gomes de Sá" },
+                { q: "The gastronomic culture of the Douro is described as what?", a: "Hearty and traditional" },
+                { q: "What are 'enchidos'?", a: "Smoked sausages" },
+                { q: "A Ruby Reserve Port pairs well with what kind of cheese?", a: "Strong, hard cheeses like mature Cheddar" },
+                { q: "Some Douro wine estates, like Quinta de La Rosa, have begun producing what other beverage?", a: "Artisanal beers" },
+                { q: "Which of these is NOT a key ingredient in Bacalhau à Gomes de Sá?", a: "Tomatoes" },
+                { q: "Which PDO ingredient from the Douro is used in confectionery?", a: "Amêndoa Douro (Almonds)" },
+                { q: "A 20-Year-Old Tawny Port would be a classic pairing for what dessert?", a: "Pecan pie" },
+                { q: "Unaged 'bagaceira' is typically what color?", a: "Clear" },
+                { q: "What are the key ingredients of a 'Francesinha'?", a: "Steak, ham, sausage, cheese, and a spicy tomato-beer sauce" },
+                { q: "What is the traditional feast to mark the end of the grape harvest?", a: "Cabrito Assado (Roasted Kid)" },
+                { q: "What is the key difference between Aguardente Vínica and Aguardente Bagaceira?", a: "Vínica is distilled from wine, Bagaceira from pomace." },
+                { q: "The pairing of Vintage Port and Stilton is a classic example of complementing sweetness with what?", a: "Saltiness" },
+                { q: "Which popular national liqueur is NOT specifically from the north but is enjoyed there?", a: "Ginjinha" },
+                { q: "A high-quality Ruby Reserve Port has the fruit character to stand up to what?", a: "Rich dark chocolate" },
+                { q: "The culinary landscape of Porto and the Douro is defined by dishes that are what?", a: "Rich and comforting" },
+                { q: "What is the defining feature of the sauce on a Francesinha?", a: "It is a signature spicy tomato and beer sauce." },
+                { q: "An Aged Tawny's flavor profile makes it a simple, perfect match for what?", a: "A plate of dried figs and walnuts" },
+                { q: "Which of these is NOT a key local PDO/PGI ingredient mentioned?", a: "Arroz Carolino (rice)" },
+                { q: "How is Licor Beirão typically served?", a: "Neat or on the rocks as a digestif" },
+                { q: "What is a key garnish for Bacalhau à Gomes de Sá?", a: "Hard-boiled eggs and black olives" },
+                { q: "What does the name 'Porto Tónico' refer to?", a: "Port and Tonic water" },
+                { q: "Which is the most iconic dish of the city of Porto itself?", a: "Tripas à Moda do Porto" },
+                { q: "Aguardente Vínica's flavor profile is often compared to what?", a: "Cognac or Armagnac" },
+                { q: "Why is 'Cabrito Assado' associated with the end of the grape harvest?", a: "It is a celebratory feast dish." },
+                { q: "The tannins in a Ruby Port work well with the fat in a hard cheese for what reason?", a: "They cut through the fat, cleansing the palate." },
+                { q: "The cuisine of the Douro reflects its agricultural heritage and historical ties to what?", a: "The sea" },
+                { q: "What is 'Carne Mirandesa'?", a: "Beef from a protected, local cattle breed" },
+                { q: "Which is a more modern culinary icon of Porto, created in the 1950s?", a: "Francesinha" }
+            ],
+            critic: [
+                { q: "Which producer is renowned for powerful, structured, and exceptionally long-lived Vintage Ports?", a: "Taylor Fladgate" },
+                { q: "Which producer is known for a more opulent, rich, and voluptuous style of Vintage Port?", a: "Fonseca" },
+                { q: "Which Symington-owned house is famed for a characteristically drier, more austere style of Vintage Port?", a: "Dow's" },
+                { q: "Which estate produces the legendary 'Nacional' Vintage Port from ungrafted vines?", a: "Quinta do Noval" },
+                { q: "Which vintage is widely considered a modern benchmark, one of the greatest of the 21st century?", a: "2011" },
+                { q: "How does the 2016 vintage characteristically differ from the hotter 2017?", a: "2016 is more balanced, with vibrant acidity and elegant structure." },
+                { q: "Which producer is a 'Value Champion', especially for its LBV?", a: "Niepoort" },
+                { q: "Which boutique winery has achieved cult status for its 'Pintas' Vintage Port?", a: "Wine & Soul" },
+                { q: "Wines aged reductively in large vessels to preserve primary fruit are what style?", a: "Ruby Styles" },
+                { q: "Wines aged oxidatively in small casks to develop nutty aromas are what style?", a: "Tawny Styles" },
+                { q: "Which Symington house represents a richer, sweeter, and more luscious style of Port?", a: "Graham's" },
+                { q: "The hot 2003 vintage produced Vintage Ports with what character?", a: "Deeply colored, aromatic, and full-bodied with ripe fruit." },
+                { q: "In good but not 'classic' years, what might a major house release?", a: "A Single Quinta Vintage Port" },
+                { q: "Who is the influential modern figurehead of Niepoort?", a: "Dirk van der Niepoort" },
+                { q: "The 2007 vintage was a classic year praised for what characteristics?", a: "Great purity, aromatic definition, and balance" },
+                { q: "Which producer is the oldest British Port house and a reliable source for value?", a: "Warre's" },
+                { q: "How are cooler, elegant Single Quinta vintages like 2013 and 2015 often positioned?", a: "They offer great value and earlier drinking." },
+                { q: "Which of these is NOT considered a 'First Growth Equivalent' iconic producer?", a: "Warre's" },
+                { q: "What is the primary characteristic of a Ruby style Port?", a: "Primary fruit aromas like blackberry and cassis" },
+                { q: "What is the primary characteristic of an Aged Tawny Port?", a: "A complex bouquet of dried fruits, nuts, and caramel" },
+                { q: "How is the 2018 vintage generally described?", a: "Variable, but the best are rich, concentrated, and powerful." },
+                { q: "Which producer's 'Guimaraens Vintage Port' is released in very good but not 'classic' years?", a: "Fonseca" },
+                { q: "Which producer's Single Quinta estate is Quinta do Bomfim?", a: "Dow's" },
+                { q: "Which producer's Single Quinta estate is Quinta dos Malvedos?", a: "Graham's" },
+                { q: "The 2022 vintage was characterized by what extreme weather?", a: "Remarkably hot and dry with record temperatures" },
+                { q: "Which newer estate is known for a modern, polished style of Vintage Port?", a: "Quinta da Pedra Alta" },
+                { q: "When does a 'general' or 'classic' declaration occur?", a: "When most of the major houses declare the vintage." },
+                { q: "The hot 2017 vintage produced wines of incredible...?", a: "Intensity and concentration" },
+                { q: "What is Taylor Fladgate's rarest and most prestigious cuvée?", a: "Quinta de Vargellas Vinha Velha Vintage Port" },
+                { q: "Which producer is known for the rare 'Garrafeira' style of Port?", a: "Niepoort" },
+                { q: "The 2012 vintage was a Single Quinta year noted for what style of wines?", a: "Concentrated yet balanced and fine wines" },
+                { q: "How is the market for Port wine changing?", a: "Sales are declining by volume but rising by value due to premiumization." },
+                { q: "What is the key sensory difference between Ruby and Tawny Port?", a: "Ruby expresses primary fruit; Tawny expresses oxidative notes." },
+                { q: "The cool 2008 vintage yielded wines with what characteristics?", a: "Fresh wines with good tannic grip" },
+                { q: "Which producer is NOT part of the Symington Family Estates portfolio?", a: "Taylor Fladgate" },
+                { q: "Which producer is NOT part of The Fladgate Partnership?", a: "Dow's" },
+                { q: "The 2014 vintage was described as:", a: "A difficult, cool, and wet vintage with very few declarations" },
+                { q: "What is the primary appeal of Aged Tawny Ports?", a: "They are complex and ready to drink upon release." },
+                { q: "What is the primary appeal of Vintage Port for collectors?", a: "Its profound capacity to evolve and gain complexity over decades." },
+                { q: "Port's critical perception is defined by sweetness, high alcohol, and what else?", a: "Concentrated richness" },
+                { q: "Which producer's entry-level Tawny is praised for its quality-to-price ratio?", a: "Dow's" },
+                { q: "Which vintage is described as wonderfully harmonious, though less powerful than 2011?", a: "2007" },
+                { q: "What is a defining characteristic of wines from 'hot, ripe vintages' like 2003 and 2009?", a: "They are rich and full-bodied, sometimes lacking finesse." },
+                { q: "The 2004 vintage was a Single Quinta year noted for what kind of wines?", a: "Very balanced and symmetrical wines" },
+                { q: "The 'Douro Boys' are most famous for pioneering what?", a: "High-quality unfortified Douro table wines" },
+                { q: "Which producer owns Quinta do Vesuvio, where all Port is still made by foot treading?", a: "Symington Family Estates" },
+                { q: "What is the aging potential of Vintage Port?", a: "It can evolve for a century or more." },
+                { q: "The 'special categories' of Port exclude which styles?", a: "Basic Ruby, Tawny, white, and rosé" },
+                { q: "Which producer created the first iconic unfortified Douro red, Barca Velha?", a: "Ferreira (Casa Ferreirinha)" },
+                { q: "Which historical figure was a vocal critic of heavy fortification?", a: "Barão de Forrester" }
+            ]
+        };
 
 
 
 
-        // --- Game Flow ---
-        function startGame() {
-            hideModal();
-            mainMenu.classList.add('hidden');
-            gameScreen.classList.remove('hidden');
-            score = 0;
-            currentQuestionIndex = 0;
+        const mainMenu = document.getElementById('main-menu');
+        const gameScreen = document.getElementById('game-screen');
+        const modalContainer = document.getElementById('modal-container');
+        const modalContentWrapper = document.getElementById('modal-content-wrapper');
+        const aiSettingsBtn = document.getElementById('ai-settings-btn');
 
 
 
 
-            if (currentModule === 'historian') {
-                questions = shuffleArray([...gameData.historian.questions]).slice(0, 4); 
-                loadHistorianQuestion();
-            } else {
-                const allModuleQuestions = [...gameData[currentModule].questions];
-                const correctLog = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions')) || {};
-                const correctQuestionsForModule = correctLog[currentModule] || [];
+        let currentModule;
+        let currentQuestionIndex;
+        let score;
+        let questions = [];
+        let userTimeline = [];
+        let historianAvailableEvents = [];
+        let flashcardDeck = [];
+        let currentFlashcardIndex = 0;
+        let userApiKey = localStorage.getItem('geminiApiKey') || '';
 
 
 
 
-                let availableQuestions = allModuleQuestions.filter(q => !correctQuestionsForModule.includes(q.q));
+        // --- Event Listeners ---
+        document.querySelectorAll('.module-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const module = button.dataset.module;
+                if (module === 'flashcard') {
+                    showFlashcardTopicSelection();
+                } else {
+                    showInstructionalModal(module);
+                }
+            });
+        });
 
 
 
 
-                if (availableQuestions.length === 0 && allModuleQuestions.length > 0) {
-                    const masteryContent = `
-                        <div class="p-6 text-center">
-                            <h2 class="text-2xl font-bold mb-4 text-green-400">Module Mastered!</h2>
-                            <p class="mb-4 text-gray-300">Congratulations! You've correctly answered all questions in this module. Your progress will be reset so you can continue to sharpen your knowledge.</p>
-                            <button onclick="resetAndStartGame()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Play Again</button>
-                        </div>
-                    `;
-                    showModal(masteryContent);
-                    return; 
-                }
-             	
-                questions = shuffleArray(availableQuestions).slice(0, 10);
-                loadQuestion();
-            }
-        }
+        aiSettingsBtn.addEventListener('click', showAiSettingsModal);
+    	
+        // --- Modal Functions ---
+        function showModal(content) {
+            modalContentWrapper.innerHTML = content;
+            modalContainer.classList.remove('hidden');
+        }
 
 
 
 
-        function resetAndStartGame() {
-            let correctLog = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions')) || {};
-            correctLog[currentModule] = [];
-            localStorage.setItem('correctlyAnsweredQuestions', JSON.stringify(correctLog));
-            startGame();
-        }
+        function hideModal() {
+            modalContainer.classList.add('hidden');
+            modalContentWrapper.innerHTML = '';
+        }
+    	
+        function showWelcomeModal() {
+            if (sessionStorage.getItem('welcomed')) return;
+            const content = `
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-4 text-purple-400">Welcome to the Gauntlet!</h2>
+                    <p class="mb-4 text-gray-300">This is "Porto: A Wine Master's Challenge," an interactive study game designed for advanced wine students.</p>
+                    <p class="mb-6 text-gray-300">Test your knowledge across history, terroir, grapes, law, and more. All questions are derived from a comprehensive research document on the region. Good luck!</p>
+                    <button onclick="closeWelcomeModal()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Begin</button>
+                </div>
+            `;
+            showModal(content);
+        }
 
 
 
 
-        function returnToMenu() {
-            hideModal();
-            gameScreen.classList.add('hidden');
-            mainMenu.classList.remove('hidden');
-            gameScreen.innerHTML = '';
-            checkGlobalMastery();
-        }
+        function closeWelcomeModal() {
+            sessionStorage.setItem('welcomed', 'true');
+            hideModal();
+        }
 
 
 
 
-        // --- Multiple Choice Logic ---
-        function loadQuestion() {
-            if (questions.length === 0 || currentQuestionIndex >= questions.length) {
-                showEndGameModal();
-                return;
-            }
+        function showInstructionalModal(module) {
+            currentModule = module;
+            const moduleData = gameData[module];
+            const content = `
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-4 text-purple-400">${moduleData.title}</h2>
+                    <p class="mb-6 text-gray-300">${moduleData.instructions}</p>
+                    <button onclick="startGame()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Start Challenge</button>
+                </div>
+            `;
+            showModal(content);
+        }
 
 
 
 
-            const q = questions[currentQuestionIndex];
-            const options = shuffleArray([q.a, ...q.o]);
-         	
-            gameScreen.innerHTML = `
-                <div class="w-full max-w-3xl">
-                    <div class="flex justify-between items-center mb-2">
-                        <button onclick="returnToMenu()" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded text-sm">← Menu</button>
-                        <p class="text-right text-gray-400">${currentQuestionIndex + 1} / ${questions.length} | Score: ${score}</p>
-                    </div>
-                    <div class="bg-gray-800 p-8 rounded-lg">
-                        <p class="text-xl md:text-2xl font-medium mb-6">${q.q}</p>
-                        <div class="space-y-4">
-                            ${options.map(option => `
-                                <button class="answer-btn block w-full text-left bg-gray-700 p-4 rounded-lg hover:bg-purple-700 transition-colors duration-200" onclick="checkAnswer('${option.replace(/'/g, "\\'")}')">
-                                    ${option}
-                                </button>
-                            `).join('')}
-                        </div>
-                        <div id="feedback-container" class="mt-6"></div>
-                    </div>
-                </div>
-            `;
-        }
-     	
-        function nextQuestion() {
-            currentQuestionIndex++;
-            loadQuestion();
-        }
-     	
-        function generateAiButtonHtml(question, isCorrect) {
-            if (!question.subjectType || !question.subjectName) {
-                return '';
-            }
-         	
-            let buttonText = isCorrect ? `➡️ Dive Deeper on ${question.subjectName}` : `💡 Learn More about ${question.subjectName}`;
-            if (question.subjectType === 'dish' || question.subjectType === 'wine_pairing') {
-                 buttonText = isCorrect ? `🍴 Explain the Pairing for ${question.subjectName}` : `💡 Learn about Pairing with ${question.subjectName}`;
-            } else if (question.subjectType === 'grape' || question.subjectType === 'viticulture') {
+        function showEndGameModal() {
+            const moduleData = gameData[currentModule];
+            const content = `
+                <div class="p-6 text-center">
+                    <h2 class="text-2xl font-bold mb-4 text-purple-400">Module Complete!</h2>
+                    <p class="text-lg mb-2 text-gray-300">You completed "${moduleData.title}".</p>
+                    <p class="text-4xl font-bold mb-6">Score: ${score} / ${questions.length}</p>
+                    <div class="flex space-x-4">
+                        <button onclick="startGame()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Keep Going</button>
+                        <button onclick="returnToMenu()" class="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">Main Menu</button>
+                    </div>
+                </div>
+            `;
+            showModal(content);
+        }
+
+
+
+
+        function showAiSettingsModal() {
+            const content = `
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-bold text-purple-400">AI Settings</h2>
+                        <button onclick="hideModal()" class="text-gray-400 hover:text-white">&times;</button>
+                    </div>
+                    <p class="mb-4 text-gray-300">To use the AI-powered features, please enter your Google AI Studio API key. You can get a key at <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-purple-400 hover:underline">aistudio.google.com/app/apikey</a>.</p>
+                    <p class="text-sm text-yellow-400 mb-4">Security Reminder: Treat your API key like a password. It is saved in your browser's local storage for convenience but is not transmitted anywhere else.</p>
+                    <div class="mb-4">
+                        <label for="api-key-input" class="block text-sm font-medium text-gray-300 mb-1">Google AI API Key</label>
+                        <input type="password" id="api-key-input" class="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white" value="${userApiKey}">
+                    </div>
+                    <button onclick="saveApiKey()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Save and Close</button>
+                </div>
+            `;
+            showModal(content);
+        }
+    	
+        function saveApiKey() {
+            userApiKey = document.getElementById('api-key-input').value;
+            localStorage.setItem('geminiApiKey', userApiKey);
+            hideModal();
+        }
+
+
+
+
+        // --- Game Flow ---
+        function startGame() {
+            hideModal();
+            mainMenu.classList.add('hidden');
+            gameScreen.classList.remove('hidden');
+            score = 0;
+            currentQuestionIndex = 0;
+
+
+
+
+            if (currentModule === 'historian') {
+                questions = shuffleArray([...gameData.historian.questions]).slice(0, 4); 
+                loadHistorianQuestion();
+            } else {
+                const allModuleQuestions = [...gameData[currentModule].questions];
+                const correctLog = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions')) || {};
+                const correctQuestionsForModule = correctLog[currentModule] || [];
+
+
+
+
+                let availableQuestions = allModuleQuestions.filter(q => !correctQuestionsForModule.includes(q.q));
+
+
+
+
+                if (availableQuestions.length === 0 && allModuleQuestions.length > 0) {
+                    const masteryContent = `
+                        <div class="p-6 text-center">
+                            <h2 class="text-2xl font-bold mb-4 text-green-400">Module Mastered!</h2>
+                            <p class="mb-4 text-gray-300">Congratulations! You've correctly answered all questions in this module. Your progress will be reset so you can continue to sharpen your knowledge.</p>
+                            <button onclick="resetAndStartGame()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Play Again</button>
+                        </div>
+                    `;
+                    showModal(masteryContent);
+                    return; 
+                }
+            	
+                questions = shuffleArray(availableQuestions).slice(0, 10);
+                loadQuestion();
+            }
+        }
+
+
+
+
+        function resetAndStartGame() {
+            let correctLog = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions')) || {};
+            correctLog[currentModule] = [];
+            localStorage.setItem('correctlyAnsweredQuestions', JSON.stringify(correctLog));
+            startGame();
+        }
+
+
+
+
+        function returnToMenu() {
+            hideModal();
+            gameScreen.classList.add('hidden');
+            mainMenu.classList.remove('hidden');
+            gameScreen.innerHTML = '';
+            checkGlobalMastery();
+        }
+
+
+
+
+        // --- Multiple Choice Logic ---
+        function loadQuestion() {
+            if (questions.length === 0 || currentQuestionIndex >= questions.length) {
+                showEndGameModal();
+                return;
+            }
+
+
+
+
+            const q = questions[currentQuestionIndex];
+            const options = shuffleArray([q.a, ...q.o]);
+        	
+            gameScreen.innerHTML = `
+                <div class="w-full max-w-3xl">
+                    <div class="flex justify-between items-center mb-2">
+                        <button onclick="returnToMenu()" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded text-sm">← Menu</button>
+                        <p class="text-right text-gray-400">${currentQuestionIndex + 1} / ${questions.length} | Score: ${score}</p>
+                    </div>
+                    <div class="bg-gray-800 p-8 rounded-lg">
+                        <p class="text-xl md:text-2xl font-medium mb-6">${q.q}</p>
+                        <div class="space-y-4">
+                            ${options.map(option => `
+                                <button class="answer-btn block w-full text-left bg-gray-700 p-4 rounded-lg hover:bg-purple-700 transition-colors duration-200" onclick="checkAnswer('${option.replace(/'/g, "\\'")}')">
+                                    ${option}
+                                </button>
+                            `).join('')}
+                        </div>
+                        <div id="feedback-container" class="mt-6"></div>
+                    </div>
+                </div>
+            `;
+        }
+    	
+        function nextQuestion() {
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+    	
+        function generateAiButtonHtml(question, isCorrect) {
+            if (!question.subjectType || !question.subjectName) {
+                return '';
+            }
+        	
+            let buttonText = isCorrect ? `➡️ Dive Deeper on ${question.subjectName}` : `💡 Learn More about ${question.subjectName}`;
+            if (question.subjectType === 'dish' || question.subjectType === 'wine_pairing') {
+                buttonText = isCorrect ? `🍴 Explain the Pairing for ${question.subjectName}` : `💡 Learn about Pairing with ${question.subjectName}`;
+            } else if (question.subjectType === 'grape' || question.subjectType === 'viticulture') {
                  buttonText = isCorrect ? `📚 Generate Ampelography Profile` : `💡 Learn More about ${question.subjectName}`;
             } else if (question.subjectType === 'producer' || question.subjectType === 'vintage' || question.subjectType === 'wine_style' || question.subjectType === 'critic') {
                 buttonText = isCorrect ? `✨ Generate Tasting Note` : `💡 Learn More about ${question.subjectName}`;
@@ -819,536 +1049,536 @@
 
 
 
-            return `<button onclick="handleAiRequest('${question.subjectType}', '${question.subjectName.replace(/'/g, "\\'")}')" class="mt-4 bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded text-sm">${buttonText}</button>`;
-        }
-
-
-
-
-        function checkAnswer(selectedOption) {
-            const q = questions[currentQuestionIndex];
-            const isCorrect = selectedOption === q.a;
-            const feedbackContainer = document.getElementById('feedback-container');
-         	
-            let feedbackHtml = '';
-            if (isCorrect) {
-                score++;
-                const questionText = q.q;
-                let correctLog = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions')) || {};
-                if (!correctLog[currentModule]) {
-                    correctLog[currentModule] = [];
-                }
-                if (!correctLog[currentModule].includes(questionText)) {
-                    correctLog[currentModule].push(questionText);
-                }
-                localStorage.setItem('correctlyAnsweredQuestions', JSON.stringify(correctLog));
-
-
-
-
-                feedbackHtml = `<div class="p-4 rounded-lg bg-green-900 border border-green-700">
-                                    <p class="font-bold text-green-300">Correct!</p>
-                                    <p class="text-green-400">${q.a}</p>
-                                    ${generateAiButtonHtml(q, true)}
-                                </div>`;
-            } else {
-                feedbackHtml = `<div class="p-4 rounded-lg bg-red-900 border border-red-700">
-                                    <p class="font-bold text-red-300">Incorrect.</p>
-                                    <p class="text-red-400">The correct answer was: ${q.a}</p>
-                                     ${generateAiButtonHtml(q, false)}
-                                </div>`;
-            }
-
-
-
-
-            feedbackContainer.innerHTML = feedbackHtml;
-            document.querySelectorAll('.answer-btn').forEach(btn => {
-                btn.disabled = true;
-                if(btn.innerText === q.a) {
-                    btn.classList.remove('hover:bg-purple-700');
-                    btn.classList.add('bg-green-700');
-                }
-            });
-            feedbackContainer.innerHTML += `<button onclick="nextQuestion()" class="mt-4 w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Continue</button>`;
-        }
-     	
-        // --- Historian's Scroll Logic ---
-        function loadHistorianQuestion() {
-            if (currentQuestionIndex >= questions.length) {
-                showEndGameModal();
-                return;
-            }
-
-
-
-
-            const q = questions[currentQuestionIndex];
-            userTimeline = [];
-         	
-            const eventsWithIds = q.events.map((event, index) => ({ ...event, id: `${currentQuestionIndex}-${index}` }));
-            historianAvailableEvents = shuffleArray(eventsWithIds);
-
-
-
-
-            gameScreen.innerHTML = `
-                <div class="w-full max-w-4xl">
-                    <div class="flex justify-between items-center mb-2">
-                        <button onclick="returnToMenu()" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded text-sm">← Menu</button>
-                        <p class="text-center text-gray-400">Question ${currentQuestionIndex + 1} / ${questions.length} | Score: ${score}</p>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg">
-                        <p class="text-xl text-center font-medium mb-6">${q.question}</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h3 class="font-bold text-lg mb-2 text-purple-400 text-center">Available Events</h3>
-                                <div id="available-events" class="space-y-2">
-                                    ${historianAvailableEvents.map(event => `
-                                        <button data-id="${event.id}" class="timeline-item w-full text-left bg-gray-700 p-3 rounded hover:bg-purple-800 transition-colors duration-200">
-                                            ${event.text}
-                                        </button>
-                                    `).join('')}
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg mb-2 text-purple-400 text-center">Your Timeline (Earliest to Latest)</h3>
-                                <div id="user-timeline" class="space-y-2 bg-gray-900 p-3 rounded-lg min-h-[200px]"></div>
-                            </div>
-                        </div>
-                        <div class="text-center mt-6">
-                            <button id="submit-timeline" class="bg-purple-700 hover:bg-purple-600 text-white font-bold py-3 px-8 rounded-lg" onclick="checkTimeline()">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-         	
-            document.querySelectorAll('#available-events .timeline-item').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const eventId = e.currentTarget.dataset.id;
-                    const event = historianAvailableEvents.find(ev => ev.id === eventId);
-                    if (event && !userTimeline.some(e => e.id === event.id)) {
-                        userTimeline.push(event);
-                        e.currentTarget.classList.add('selected', 'opacity-50', 'cursor-not-allowed');
-                        e.currentTarget.disabled = true;
-                        renderUserTimeline();
-                    }
-                });
-            });
-        }
-     	
-        function renderUserTimeline() {
-            const timelineContainer = document.getElementById('user-timeline');
-            timelineContainer.innerHTML = userTimeline.map((event, index) => `
-                <div class="bg-purple-900 p-3 rounded flex items-center justify-between">
-                    <span>${index + 1}. ${event.text}</span>
-                    <button class="text-red-400 hover:text-red-200 font-bold" onclick="removeFromTimeline('${event.id}')">&times;</button>
-                </div>
-            `).join('');
-        }
-
-
-
-
-        function removeFromTimeline(eventId) {
-            const indexToRemove = userTimeline.findIndex(event => event.id === eventId);
-
-
-
-
-            if (indexToRemove > -1) {
-                userTimeline.splice(indexToRemove, 1);
-                const buttonToReEnable = document.querySelector(`#available-events .timeline-item[data-id="${eventId}"]`);
-                if (buttonToReEnable) {
-                    buttonToReEnable.disabled = false;
-                    buttonToReEnable.classList.remove('selected', 'opacity-50', 'cursor-not-allowed');
-                }
-                renderUserTimeline();
-            }
-        }
-
-
-
-
-        function checkTimeline() {
-            const q = questions[currentQuestionIndex];
-            const correctTimeline = [...q.events].sort((a, b) => a.date - b.date);
-            let isCompletelyCorrect = userTimeline.length === correctTimeline.length;
-         	
-            if (isCompletelyCorrect) {
-                for (let i = 0; i < correctTimeline.length; i++) {
-                    if (userTimeline[i].text !== correctTimeline[i].text) {
-                        isCompletelyCorrect = false;
-                        break;
-                    }
-                }
-            }
-         	
-            if(isCompletelyCorrect) {
-                score++;
-            }
+            return `<button onclick="handleAiRequest('${question.subjectType}', '${question.subjectName.replace(/'/g, "\\'")}')" class="mt-4 bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 px-4 rounded text-sm">${buttonText}</button>`;
+        }
+
+
+
+
+        function checkAnswer(selectedOption) {
+            const q = questions[currentQuestionIndex];
+            const isCorrect = selectedOption === q.a;
+            const feedbackContainer = document.getElementById('feedback-container');
+        	
+            let feedbackHtml = '';
+            if (isCorrect) {
+                score++;
+                const questionText = q.q;
+                let correctLog = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions')) || {};
+                if (!correctLog[currentModule]) {
+                    correctLog[currentModule] = [];
+                }
+                if (!correctLog[currentModule].includes(questionText)) {
+                    correctLog[currentModule].push(questionText);
+                }
+                localStorage.setItem('correctlyAnsweredQuestions', JSON.stringify(correctLog));
+
+
+
+
+                feedbackHtml = `<div class="p-4 rounded-lg bg-green-900 border border-green-700">
+                                    <p class="font-bold text-green-300">Correct!</p>
+                                    <p class="text-green-400">${q.a}</p>
+                                    ${generateAiButtonHtml(q, true)}
+                                </div>`;
+            } else {
+                feedbackHtml = `<div class="p-4 rounded-lg bg-red-900 border border-red-700">
+                                    <p class="font-bold text-red-300">Incorrect.</p>
+                                    <p class="text-red-400">The correct answer was: ${q.a}</p>
+                                    ${generateAiButtonHtml(q, false)}
+                                </div>`;
+            }
+
+
+
+
+            feedbackContainer.innerHTML = feedbackHtml;
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.disabled = true;
+                if(btn.innerText === q.a) {
+                    btn.classList.remove('hover:bg-purple-700');
+                    btn.classList.add('bg-green-700');
+                }
+            });
+            feedbackContainer.innerHTML += `<button onclick="nextQuestion()" class="mt-4 w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Continue</button>`;
+        }
+    	
+        // --- Historian's Scroll Logic ---
+        function loadHistorianQuestion() {
+            if (currentQuestionIndex >= questions.length) {
+                showEndGameModal();
+                return;
+            }
+
+
+
+
+            const q = questions[currentQuestionIndex];
+            userTimeline = [];
+        	
+            const eventsWithIds = q.events.map((event, index) => ({ ...event, id: `${currentQuestionIndex}-${index}` }));
+            historianAvailableEvents = shuffleArray(eventsWithIds);
+
+
+
+
+            gameScreen.innerHTML = `
+                <div class="w-full max-w-4xl">
+                    <div class="flex justify-between items-center mb-2">
+                        <button onclick="returnToMenu()" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded text-sm">← Menu</button>
+                        <p class="text-center text-gray-400">Question ${currentQuestionIndex + 1} / ${questions.length} | Score: ${score}</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <p class="text-xl text-center font-medium mb-6">${q.question}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-bold text-lg mb-2 text-purple-400 text-center">Available Events</h3>
+                                <div id="available-events" class="space-y-2">
+                                    ${historianAvailableEvents.map(event => `
+                                        <button data-id="${event.id}" class="timeline-item w-full text-left bg-gray-700 p-3 rounded hover:bg-purple-800 transition-colors duration-200">
+                                            ${event.text}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-2 text-purple-400 text-center">Your Timeline (Earliest to Latest)</h3>
+                                <div id="user-timeline" class="space-y-2 bg-gray-900 p-3 rounded-lg min-h-[200px]"></div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-6">
+                            <button id="submit-timeline" class="bg-purple-700 hover:bg-purple-600 text-white font-bold py-3 px-8 rounded-lg" onclick="checkTimeline()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        	
+            document.querySelectorAll('#available-events .timeline-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const eventId = e.currentTarget.dataset.id;
+                    const event = historianAvailableEvents.find(ev => ev.id === eventId);
+                    if (event && !userTimeline.some(e => e.id === event.id)) {
+                        userTimeline.push(event);
+                        e.currentTarget.classList.add('selected', 'opacity-50', 'cursor-not-allowed');
+                        e.currentTarget.disabled = true;
+                        renderUserTimeline();
+                    }
+                });
+            });
+        }
+    	
+        function renderUserTimeline() {
+            const timelineContainer = document.getElementById('user-timeline');
+            timelineContainer.innerHTML = userTimeline.map((event, index) => `
+                <div class="bg-purple-900 p-3 rounded flex items-center justify-between">
+                    <span>${index + 1}. ${event.text}</span>
+                    <button class="text-red-400 hover:text-red-200 font-bold" onclick="removeFromTimeline('${event.id}')">&times;</button>
+                </div>
+            `).join('');
+        }
+
+
+
+
+        function removeFromTimeline(eventId) {
+            const indexToRemove = userTimeline.findIndex(event => event.id === eventId);
+
+
+
+
+            if (indexToRemove > -1) {
+                userTimeline.splice(indexToRemove, 1);
+                const buttonToReEnable = document.querySelector(`#available-events .timeline-item[data-id="${eventId}"]`);
+                if (buttonToReEnable) {
+                    buttonToReEnable.disabled = false;
+                    buttonToReEnable.classList.remove('selected', 'opacity-50', 'cursor-not-allowed');
+                }
+                renderUserTimeline();
+            }
+        }
+
+
+
+
+        function checkTimeline() {
+            const q = questions[currentQuestionIndex];
+            const correctTimeline = [...q.events].sort((a, b) => a.date - b.date);
+            let isCompletelyCorrect = userTimeline.length === correctTimeline.length;
+        	
+            if (isCompletelyCorrect) {
+                for (let i = 0; i < correctTimeline.length; i++) {
+                    if (userTimeline[i].text !== correctTimeline[i].text) {
+                        isCompletelyCorrect = false;
+                        break;
+                    }
+                }
+            }
+        	
+            if(isCompletelyCorrect) {
+                score++;
+            }
 
 
 
 
-            const userTimelineHtml = userTimeline.map((event, i) => {
-                const isEventInCorrectPosition = correctTimeline[i] && correctTimeline[i].text === event.text;
-                const borderColor = isEventInCorrectPosition ? 'border-green-500' : 'border-red-500';
-                return `<li class="p-2 bg-gray-700 rounded border-2 ${borderColor}">${event.text}</li>`;
-            }).join('');
+            const userTimelineHtml = userTimeline.map((event, i) => {
+                const isEventInCorrectPosition = correctTimeline[i] && correctTimeline[i].text === event.text;
+                const borderColor = isEventInCorrectPosition ? 'border-green-500' : 'border-red-500';
+                return `<li class="p-2 bg-gray-700 rounded border-2 ${borderColor}">${event.text}</li>`;
+            }).join('');
 
 
 
 
-            const correctTimelineHtml = correctTimeline.map(e => 
-                `<li class="p-2 bg-gray-700 rounded border-2 border-green-500">${e.text} <span class="text-gray-400 text-sm">(${e.date})</span></li>`
-            ).join('');
-         	
-            const feedbackContent = `
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold mb-4 ${isCompletelyCorrect ? 'text-green-400' : 'text-yellow-400'}">${isCompletelyCorrect ? 'Perfect!' : 'Review Your Timeline'}</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="font-bold text-lg mb-2 text-purple-400">Your Timeline</h3>
-                            <ol class="list-decimal list-inside space-y-2">
-                                ${userTimelineHtml}
-                            </ol>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-2 text-purple-400">Correct Timeline</h3>
-                            <ol class="list-decimal list-inside space-y-2">
-                                ${correctTimelineHtml}
-                            </ol>
-                        </div>
-                    </div>
-                    <button onclick="nextHistorianQuestion()" class="mt-6 w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Continue</button>
-                </div>
-            `;
-            showModal(feedbackContent);
-        }
-
-
-
-
-        function nextHistorianQuestion() {
-            hideModal();
-            currentQuestionIndex++;
-            loadHistorianQuestion();
-        }
+            const correctTimelineHtml = correctTimeline.map(e => 
+                `<li class="p-2 bg-gray-700 rounded border-2 border-green-500">${e.text} <span class="text-gray-400 text-sm">(${e.date})</span></li>`
+            ).join('');
+        	
+            const feedbackContent = `
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-4 ${isCompletelyCorrect ? 'text-green-400' : 'text-yellow-400'}">${isCompletelyCorrect ? 'Perfect!' : 'Review Your Timeline'}</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg mb-2 text-purple-400">Your Timeline</h3>
+                            <ol class="list-decimal list-inside space-y-2">
+                                ${userTimelineHtml}
+                            </ol>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2 text-purple-400">Correct Timeline</h3>
+                            <ol class="list-decimal list-inside space-y-2">
+                                ${correctTimelineHtml}
+                            </ol>
+                        </div>
+                    </div>
+                    <button onclick="nextHistorianQuestion()" class="mt-6 w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Continue</button>
+                </div>
+            `;
+            showModal(feedbackContent);
+        }
+
+
+
+
+        function nextHistorianQuestion() {
+            hideModal();
+            currentQuestionIndex++;
+            loadHistorianQuestion();
+        }
 
 
 
 
-        // --- Mastery Logic ---
-        function checkGlobalMastery() {
-            if (sessionStorage.getItem('globalMasteryAcknowledged')) {
-                return;
-            }
+        // --- Mastery Logic ---
+        function checkGlobalMastery() {
+            if (sessionStorage.getItem('globalMasteryAcknowledged')) {
+                return;
+            }
 
 
 
 
-            const modulesToMaster = ['terroir', 'ampelographer', 'lawmaker', 'gastronome', 'critic'];
-            const correctLog = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions')) || {};
-         	
-            let allMastered = true;
-            for (const module of modulesToMaster) {
-                const totalQuestions = gameData[module].questions.length;
-                const correctlyAnswered = (correctLog[module] || []).length;
-                if (correctlyAnswered < totalQuestions) {
-                    allMastered = false;
-                    break;
-                }
-            }
+            const modulesToMaster = ['terroir', 'ampelographer', 'lawmaker', 'gastronome', 'critic'];
+            const correctLog = JSON.parse(localStorage.getItem('correctlyAnsweredQuestions')) || {};
+        	
+            let allMastered = true;
+            for (const module of modulesToMaster) {
+                const totalQuestions = gameData[module].questions.length;
+                const correctlyAnswered = (correctLog[module] || []).length;
+                if (correctlyAnswered < totalQuestions) {
+                    allMastered = false;
+                    break;
+                }
+            }
 
 
 
 
-            if (allMastered) {
-                showGlobalMasteryModal();
-            }
-        }
+            if (allMastered) {
+                showGlobalMasteryModal();
+            }
+        }
 
 
 
 
-        function showGlobalMasteryModal() {
-            const content = `
-                <div class="p-6 text-center">
-                    <h2 class="text-2xl font-bold mb-4 text-purple-400">Congratulations, Wine Master!</h2>
-                    <p class="mb-4 text-gray-300">You have demonstrated exceptional knowledge by correctly answering every question across all core modules. You have truly mastered Porto!</p>
-                    <p class="mb-6 text-gray-300">To keep your expertise sharp, continue to practice with the <strong>Flashcard Study</strong> decks.</p>
-                    <button onclick="closeGlobalMasteryModal()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Continue</button>
-                </div>
-            `;
-            showModal(content);
-        }
+        function showGlobalMasteryModal() {
+            const content = `
+                <div class="p-6 text-center">
+                    <h2 class="text-2xl font-bold mb-4 text-purple-400">Congratulations, Wine Master!</h2>
+                    <p class="mb-4 text-gray-300">You have demonstrated exceptional knowledge by correctly answering every question across all core modules. You have truly mastered Porto!</p>
+                    <p class="mb-6 text-gray-300">To keep your expertise sharp, continue to practice with the <strong>Flashcard Study</strong> decks.</p>
+                    <button onclick="closeGlobalMasteryModal()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Continue</button>
+                </div>
+            `;
+            showModal(content);
+        }
 
 
 
 
-        function closeGlobalMasteryModal() {
-            sessionStorage.setItem('globalMasteryAcknowledged', 'true');
-            hideModal();
-        }
+        function closeGlobalMasteryModal() {
+            sessionStorage.setItem('globalMasteryAcknowledged', 'true');
+            hideModal();
+        }
 
-
-
-
-        // --- Flashcard Logic ---
-        function showFlashcardTopicSelection() {
-            const topics = Object.keys(flashcardData); // Use flashcardData keys
-            const content = `
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold mb-4 text-purple-400">Build Your Flashcard Deck</h2>
-                    <p class="mb-6 text-gray-300">Select the topics you want to study. These decks cover the entire source document.</p>
-                    <div id="flashcard-topics" class="space-y-2 mb-4">
-                        ${topics.map(topic => `
-                            <label class="flex items-center bg-gray-700 p-3 rounded-lg hover:bg-gray-600 cursor-pointer">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 bg-gray-800 border-gray-600 rounded focus:ring-purple-500" data-topic="${topic}">
-                                <span class="ml-3 text-white">${gameData[topic].title}</span>
-                            </label>
-                        `).join('')}
-                    </div>
-                     <label class="flex items-center bg-gray-700 p-3 rounded-lg hover:bg-gray-600 cursor-pointer mb-6">
-                        <input type="checkbox" id="select-all-topics" class="form-checkbox h-5 w-5 text-purple-600 bg-gray-800 border-gray-600 rounded focus:ring-purple-500">
-                        <span class="ml-3 text-white font-bold">Select All</span>
-                    </label>
-                    <button onclick="startFlashcardSession()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Start Studying</button>
-                </div>
-            `;
-            showModal(content);
-         	
-            document.getElementById('select-all-topics').addEventListener('change', (e) => {
-                document.querySelectorAll('#flashcard-topics input[type="checkbox"]').forEach(checkbox => {
-                    checkbox.checked = e.target.checked;
-                });
-            });
-        }
-
-
-
-
-        function startFlashcardSession() {
-            flashcardDeck = [];
-            const selectedTopics = Array.from(document.querySelectorAll('#flashcard-topics input:checked')).map(cb => cb.dataset.topic);
-
-
-
-
-            if (selectedTopics.length === 0) {
-                showModal(`<div class="p-6 text-center">
-                    <p class="text-lg text-yellow-400 mb-4">Please select at least one topic.</p>
-                    <button onclick="showFlashcardTopicSelection()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Go Back</button>
-                </div>`);
-                return;
-            }
-
-
-
-
-            selectedTopics.forEach(topic => {
-                if (flashcardData[topic]) {
-                    flashcardDeck.push(...flashcardData[topic]);
-                }
-            });
-
-
-
-
-            flashcardDeck = shuffleArray(flashcardDeck);
-            currentFlashcardIndex = 0;
-            hideModal();
-            mainMenu.classList.add('hidden');
-            gameScreen.classList.remove('hidden');
-            loadFlashcard();
-        }
-
-
-
-
-        function loadFlashcard() {
-            if (flashcardDeck.length === 0) {
-                gameScreen.innerHTML = `<div class="text-center">
-                    <p class="text-2xl mb-4">No topics selected.</p>
-                    <button onclick="returnToMenu()" class="bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Main Menu</button>
-                </div>`;
-                return;
-            }
-            const card = flashcardDeck[currentFlashcardIndex];
-            gameScreen.innerHTML = `
-                <div class="w-full max-w-2xl flex flex-col items-center">
-                    <p class="text-gray-400 mb-4">${currentFlashcardIndex + 1} / ${flashcardDeck.length}</p>
-                    <div class="flashcard-container w-full h-80 mb-6">
-                        <div class="flashcard" onclick="this.classList.toggle('is-flipped')">
-                            <div class="flashcard-face flashcard-front text-2xl font-semibold">${card.q}</div>
-                            <div class="flashcard-face flashcard-back text-xl overflow-y-auto">${card.a}</div>
-                        </div>
-                    </div>
-                    <div class="flex justify-between w-full">
-                        <button id="prev-card" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded">&larr; Previous</button>
-                        <button onclick="returnToMenu()" class="bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-6 rounded">End Session</button>
-                        <button id="next-card" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded">Next &rarr;</button>
-                    </div>
-                </div>
-            `;
-         	
-            document.getElementById('prev-card').addEventListener('click', () => {
-                if (currentFlashcardIndex > 0) {
-                    currentFlashcardIndex--;
-                    loadFlashcard();
-                }
-            });
-            document.getElementById('next-card').addEventListener('click', () => {
-                if (currentFlashcardIndex < flashcardDeck.length - 1) {
-                    currentFlashcardIndex++;
-                    loadFlashcard();
-                }
-            });
-        }
-     	
-        // --- AI Integration ---
-        async function handleAiRequest(subjectType, subjectName) {
-            if (!userApiKey) {
-                showModal(`<div class="p-6 text-center">
-                    <h2 class="text-2xl font-bold mb-4 text-yellow-400">API Key Required</h2>
-                    <p class="mb-4 text-gray-300">Please set your Google AI API key in the 'AI Settings' on the main menu to use this feature.</p>
-                    <button onclick="hideModal()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Close</button>
-                </div>`);
-                return;
-            }
-
-
-
-
-            let prompt;
-            let title;
-            const region = "Porto and the Douro Valley";
-
-
-
-
-            switch (subjectType) {
-                case 'grape':
+
+
+
+        // --- Flashcard Logic ---
+        function showFlashcardTopicSelection() {
+            const topics = Object.keys(flashcardData); // Use flashcardData keys
+            const content = `
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-4 text-purple-400">Build Your Flashcard Deck</h2>
+                    <p class="mb-6 text-gray-300">Select the topics you want to study. These decks cover the entire source document.</p>
+                    <div id="flashcard-topics" class="space-y-2 mb-4">
+                        ${topics.map(topic => `
+                            <label class="flex items-center bg-gray-700 p-3 rounded-lg hover:bg-gray-600 cursor-pointer">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600 bg-gray-800 border-gray-600 rounded focus:ring-purple-500" data-topic="${topic}">
+                                <span class="ml-3 text-white">${gameData[topic].title}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                     <label class="flex items-center bg-gray-700 p-3 rounded-lg hover:bg-gray-600 cursor-pointer mb-6">
+                        <input type="checkbox" id="select-all-topics" class="form-checkbox h-5 w-5 text-purple-600 bg-gray-800 border-gray-600 rounded focus:ring-purple-500">
+                        <span class="ml-3 text-white font-bold">Select All</span>
+                    </label>
+                    <button onclick="startFlashcardSession()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Start Studying</button>
+                </div>
+            `;
+            showModal(content);
+        	
+            document.getElementById('select-all-topics').addEventListener('change', (e) => {
+                document.querySelectorAll('#flashcard-topics input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = e.target.checked;
+                });
+            });
+        }
+
+
+
+
+        function startFlashcardSession() {
+            flashcardDeck = [];
+            const selectedTopics = Array.from(document.querySelectorAll('#flashcard-topics input:checked')).map(cb => cb.dataset.topic);
+
+
+
+
+            if (selectedTopics.length === 0) {
+                showModal(`<div class="p-6 text-center">
+                    <p class="text-lg text-yellow-400 mb-4">Please select at least one topic.</p>
+                    <button onclick="showFlashcardTopicSelection()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Go Back</button>
+                </div>`);
+                return;
+            }
+
+
+
+
+            selectedTopics.forEach(topic => {
+                if (flashcardData[topic]) {
+                    flashcardDeck.push(...flashcardData[topic]);
+                }
+            });
+
+
+
+
+            flashcardDeck = shuffleArray(flashcardDeck);
+            currentFlashcardIndex = 0;
+            hideModal();
+            mainMenu.classList.add('hidden');
+            gameScreen.classList.remove('hidden');
+            loadFlashcard();
+        }
+
+
+
+
+        function loadFlashcard() {
+            if (flashcardDeck.length === 0) {
+                gameScreen.innerHTML = `<div class="text-center">
+                    <p class="text-2xl mb-4">No topics selected.</p>
+                    <button onclick="returnToMenu()" class="bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Main Menu</button>
+                </div>`;
+                return;
+            }
+            const card = flashcardDeck[currentFlashcardIndex];
+            gameScreen.innerHTML = `
+                <div class="w-full max-w-2xl flex flex-col items-center">
+                    <p class="text-gray-400 mb-4">${currentFlashcardIndex + 1} / ${flashcardDeck.length}</p>
+                    <div class="flashcard-container w-full h-80 mb-6">
+                        <div class="flashcard" onclick="this.classList.toggle('is-flipped')">
+                            <div class="flashcard-face flashcard-front text-2xl font-semibold">${card.q}</div>
+                            <div class="flashcard-face flashcard-back text-xl overflow-y-auto">${card.a}</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between w-full">
+                        <button id="prev-card" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded">&larr; Previous</button>
+                        <button onclick="returnToMenu()" class="bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-6 rounded">End Session</button>
+                        <button id="next-card" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded">Next &rarr;</button>
+                    </div>
+                </div>
+            `;
+        	
+            document.getElementById('prev-card').addEventListener('click', () => {
+                if (currentFlashcardIndex > 0) {
+                    currentFlashcardIndex--;
+                    loadFlashcard();
+                }
+            });
+            document.getElementById('next-card').addEventListener('click', () => {
+                if (currentFlashcardIndex < flashcardDeck.length - 1) {
+                    currentFlashcardIndex++;
+                    loadFlashcard();
+                }
+            });
+        }
+    	
+        // --- AI Integration ---
+        async function handleAiRequest(subjectType, subjectName) {
+            if (!userApiKey) {
+                showModal(`<div class="p-6 text-center">
+                    <h2 class="text-2xl font-bold mb-4 text-yellow-400">API Key Required</h2>
+                    <p class="mb-4 text-gray-300">Please set your Google AI API key in the 'AI Settings' on the main menu to use this feature.</p>
+                    <button onclick="hideModal()" class="w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Close</button>
+                </div>`);
+                return;
+            }
+
+
+
+
+            let prompt;
+            let title;
+            const region = "Porto and the Douro Valley";
+
+
+
+
+            switch (subjectType) {
+                case 'grape':
                 case 'viticulture':
-                    title = `Ampelography Profile: ${subjectName}`;
-                    prompt = `You are a master ampelographer and wine educator with a specialization in ${region}. Your task is to profile the grape or viticultural topic: ${subjectName}. Your response must follow this strict pyramid of importance: 1. The subject's specific expression and role within ${region}. 2. Its general characteristics as they manifest in ${region}'s climate. 3. Its history within the region. Your entire response must be framed through the lens of ${region}. Synthesize information from authoritative sources, but always prioritize the context of ${region}. Structure your response with the following sections: Overview and History in ${region}, Characteristics in ${region}, and Role in ${region} Wine. Format the output in simple HTML.`;
-                    break;
-                case 'wine':
-                case 'producer':
-                case 'vintage':
-                case 'place':
-                case 'wine_style':
+                    title = `Ampelography Profile: ${subjectName}`;
+                    prompt = `You are a master ampelographer and wine educator with a specialization in ${region}. Your task is to profile the grape or viticultural topic: ${subjectName}. Your response must follow this strict pyramid of importance: 1. The subject's specific expression and role within ${region}. 2. Its general characteristics as they manifest in ${region}'s climate. 3. Its history within the region. Your entire response must be framed through the lens of ${region}. Synthesize information from authoritative sources, but always prioritize the context of ${region}. Structure your response with the following sections: Overview and History in ${region}, Characteristics in ${region}, and Role in ${region} Wine. Format the output in simple HTML.`;
+                    break;
+                case 'wine':
+                case 'producer':
+                case 'vintage':
+                case 'place':
+                case 'wine_style':
                 case 'critic':
-                    title = `Critic's Focus: ${subjectName}`;
-                    prompt = `You are a world-renowned wine critic specializing exclusively in the wines of ${region}. Your task is to write a professional profile for the following iconic ${region} topic: ${subjectName}. Your analysis must adhere to a strict pyramid of importance: 1) The specific subject's style or character. 2) The character of its specific appellation within ${region}. 3) The general characteristics of ${region}. Do not mention wines from other regions unless making a direct, essential stylistic comparison. Synthesize information from authoritative sources like Vinous, The Wine Advocate, and JancisRobinson.com, but ensure the final note is your own expert synthesis. Format in simple HTML.`;
-                    break;
-                case 'dish':
-                case 'wine_pairing':
-                    title = `Gastronomic Pairing: ${subjectName}`;
-                    prompt = `You are a master sommelier and food theorist specializing in the cuisine and wine of ${region}. Your task is to explain the classic wine pairing for the dish: ${subjectName}. Your explanation must follow this strict pyramid of importance: 1. The specific characteristics of the dish as found in the region. 2. The typical profile of a ${region} wine that pairs with it. 3. The underlying gastronomic principles (complement, contrast, texture) that make the pairing successful within the context of ${region}'s culture. Synthesize information from expert sources, but frame your entire response within the context of ${region}. Format in simple HTML.`;
-                    break;
-                case 'ingredient':
-                case 'gastronomy':
-                    title = `Ingredient Focus: ${subjectName}`;
-                    prompt = `You are a food and wine expert specializing in the cuisine of ${region}. Your task is to provide a detailed overview of the ingredient: ${subjectName}. Your response must follow this strict pyramid of importance: 1. How this ingredient is used in the local cuisine of ${region}. 2. Its typical flavor and aromatic profile. 3. How its profile might be reflected in or complement the local wines, but do not focus on specific pairings unless it is intrinsic to the ingredient itself. Synthesize from authoritative sources. Format in simple HTML.`;
-                    break;
+                    title = `Critic's Focus: ${subjectName}`;
+                    prompt = `You are a world-renowned wine critic specializing exclusively in the wines of ${region}. Your task is to write a professional profile for the following iconic ${region} topic: ${subjectName}. Your analysis must adhere to a strict pyramid of importance: 1) The specific subject's style or character. 2) The character of its specific appellation within ${region}. 3) The general characteristics of ${region}. Do not mention wines from other regions unless making a direct, essential stylistic comparison. Synthesize information from authoritative sources like Vinous, The Wine Advocate, and JancisRobinson.com, but ensure the final note is your own expert synthesis. Format in simple HTML.`;
+                    break;
+                case 'dish':
+                case 'wine_pairing':
+                    title = `Gastronomic Pairing: ${subjectName}`;
+                    prompt = `You are a master sommelier and food theorist specializing in the cuisine and wine of ${region}. Your task is to explain the classic wine pairing for the dish: ${subjectName}. Your explanation must follow this strict pyramid of importance: 1. The specific characteristics of the dish as found in the region. 2. The typical profile of a ${region} wine that pairs with it. 3. The underlying gastronomic principles (complement, contrast, texture) that make the pairing successful within the context of ${region}'s culture. Synthesize information from expert sources, but frame your entire response within the context of ${region}. Format in simple HTML.`;
+                    break;
+                case 'ingredient':
+                case 'gastronomy':
+                    title = `Ingredient Focus: ${subjectName}`;
+                    prompt = `You are a food and wine expert specializing in the cuisine of ${region}. Your task is to provide a detailed overview of the ingredient: ${subjectName}. Your response must follow this strict pyramid of importance: 1. How this ingredient is used in the local cuisine of ${region}. 2. Its typical flavor and aromatic profile. 3. How its profile might be reflected in or complement the local wines, but do not focus on specific pairings unless it is intrinsic to the ingredient itself. Synthesize from authoritative sources. Format in simple HTML.`;
+                    break;
                 case 'spirit':
                 case 'liqueur':
-                case 'beverage':
-                    title = `Beverage Profile: ${subjectName}`;
-                    prompt = `You are an expert on the spirits and liqueurs of Portugal, with a specialization in ${region}. Your task is to provide a detailed overview of ${subjectName}. Your response must follow this strict pyramid of importance: 1. How ${subjectName} is made and consumed specifically within ${region}. 2. Its key ingredients and typical flavor profile. 3. Its cultural significance in ${region}. Do not focus on wine pairings unless it is a key part of its consumption. Synthesize information from authoritative sources. Format in simple HTML.`;
-                    break;
-                default:
-                    title = `Expert Overview: ${subjectName}`;
-                    prompt = `You are a wine and food expert specializing in ${region}. Provide a concise and informative overview of the following topic: ${subjectName}, ensuring your response is strictly relevant to its context within ${region}. Format in simple HTML.`;
-            }
-         	
-            showModal(`<div class="p-6 text-center">
-                <h2 class="text-2xl font-bold mb-4 text-purple-400">Generating AI Response...</h2>
-                <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto"></div>
-                <p class="mt-4 text-gray-400">Please wait, contacting the master sommelier...</p>
-            </div>`);
+                case 'beverage':
+                    title = `Beverage Profile: ${subjectName}`;
+                    prompt = `You are an expert on the spirits and liqueurs of Portugal, with a specialization in ${region}. Your task is to provide a detailed overview of ${subjectName}. Your response must follow this strict pyramid of importance: 1. How ${subjectName} is made and consumed specifically within ${region}. 2. Its key ingredients and typical flavor profile. 3. Its cultural significance in ${region}. Do not focus on wine pairings unless it is a key part of its consumption. Synthesize information from authoritative sources. Format in simple HTML.`;
+                    break;
+                default:
+                    title = `Expert Overview: ${subjectName}`;
+                    prompt = `You are a wine and food expert specializing in ${region}. Provide a concise and informative overview of the following topic: ${subjectName}, ensuring your response is strictly relevant to its context within ${region}. Format in simple HTML.`;
+            }
+        	
+            showModal(`<div class="p-6 text-center">
+                <h2 class="text-2xl font-bold mb-4 text-purple-400">Generating AI Response...</h2>
+                <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto"></div>
+                <p class="mt-4 text-gray-400">Please wait, contacting the master sommelier...</p>
+            </div>`);
 
 
 
 
-            try {
-                const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                const payload = { contents: chatHistory };
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${userApiKey}`;
-             	
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+            try {
+                const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${userApiKey}`;
+            	
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
 
 
 
 
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.error.message || `API request failed with status ${response.status}`);
-                }
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error.message || `API request failed with status ${response.status}`);
+                }
 
 
 
 
-                const result = await response.json();
-             	
-                if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts[0]) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    const aiContent = `
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="text-2xl font-bold text-purple-400">${title}</h2>
-                                <button onclick="hideModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
-                            </div>
-                            <div class="prose prose-invert prose-purple max-w-none">${text.replace(/\n/g, '<br>')}</div>
-                        </div>`;
-                    showModal(aiContent);
-                } else {
-                     throw new Error("Invalid response structure from API.");
-                }
+                const result = await response.json();
+            	
+                if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts[0]) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    const aiContent = `
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-2xl font-bold text-purple-400">${title}</h2>
+                                <button onclick="hideModal()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                            </div>
+                            <div class="prose prose-invert prose-purple max-w-none">${text.replace(/\n/g, '<br>')}</div>
+                        </div>`;
+                    showModal(aiContent);
+                } else {
+                     throw new Error("Invalid response structure from API.");
+                }
 
 
 
 
-            } catch (error) {
-                console.error("AI Generation Error:", error);
-                const errorContent = `
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-4 text-red-400">Error</h2>
-                        <p class="mb-4 text-gray-300">Could not generate AI response. Please check your API key and network connection.</p>
-                        <p class="text-sm text-gray-500 bg-gray-900 p-2 rounded">${error.message}</p>
-                        <button onclick="hideModal()" class="mt-4 w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Close</button>
-                    </div>`;
-                showModal(errorContent);
-            }
-        }
+            } catch (error) {
+                console.error("AI Generation Error:", error);
+                const errorContent = `
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold mb-4 text-red-400">Error</h2>
+                        <p class="mb-4 text-gray-300">Could not generate AI response. Please check your API key and network connection.</p>
+                        <p class="text-sm text-gray-500 bg-gray-900 p-2 rounded">${error.message}</p>
+                        <button onclick="hideModal()" class="mt-4 w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Close</button>
+                    </div>`;
+                showModal(errorContent);
+            }
+        }
 
 
 
 
-        // --- Utility Functions ---
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
+        // --- Utility Functions ---
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
 
 
 
 
-        // --- Initial Load ---
-        window.onload = showWelcomeModal;
+        // --- Initial Load ---
+        window.onload = showWelcomeModal;
 
 
 
 
-    </script>
+    </script>
 </body>
 </html>
